@@ -19,14 +19,6 @@ manager.add_command("shell", Shell(make_context=make_shell_context))
 manager.add_command('db', MigrateCommand)
 
 
-@manager.command
-def api():
-    """Run the unit tests."""
-    import unittest
-    test = unittest.TestLoader().discover('test')
-    unittest.TextTestRunner(verbosity=2).run(test)
-
-
 @manager.option('-d', '-drop_first', dest='drop_first', default=False)
 def createdb(drop_first):
     """Creates the database."""

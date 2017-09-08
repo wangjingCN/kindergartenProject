@@ -1,0 +1,13 @@
+body {
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.footer-p {
+    padding-left: 30px;
+    font-family: bold;
+}
+
+.footer-top {
+    padding-right: 30px;
+}

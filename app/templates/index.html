@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+{% block title %}My Flask  WebSite{% endblock title %}
+{% block styles %}
+    {{ super() }}
+    <link href="{{ url_for('static',filename='css/personal/carousel.css') }}" rel="stylesheet"/>
+{% endblock %}
+{% block body_content %}
+    {#    轮播组件开始#}
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <a href="http://www.baidu.com" target="_blank"><img
+                        src="{{ url_for('static',filename='pic/safari.jpg') }}" alt="safari"></a>
+            </div>
+            <div class="item">
+                <a href="http://www.baidu.com" target="_blank"><img
+                        src="{{ url_for('static',filename='pic/opera.jpg') }}" alt="opera"></a>
+            </div>
+            <div class="item">
+                <a href="http://www.baidu.com" target="_blank"><img
+                        src="{{ url_for('static',filename='pic/firefox.jpg') }}" alt="firefox"></a>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="FALSE"></span>
+            <span class="sr-only">上一页</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">下一页</span>
+        </a>
+        {#    轮播组件结束#}
+    </div>
+    {#    三栏布局#}
+    <div class="container" id="sumary-container">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{{ url_for('static',filename='pic/opera.jpg') }}" alt="safari">
+                <h2>一个飞快的浏览器</h2>
+                <a class="btn btn-lg btn-primary" href="#" role="button">点击我下载</a>
+            </div>
+            <div class="col-md-4">
+                <img src="{{ url_for('static',filename='pic/opera.jpg') }}" alt="safari">
+                <h2>一个飞快的浏览器</h2>
+                <a class="btn btn-lg btn-primary" href="#" role="button">点击我下载</a>
+            </div>
+            <div class="col-md-4">
+                <img src="{{ url_for('static',filename='pic/opera.jpg') }}" alt="safari">
+                <h2>一个飞快的浏览器</h2>
+                <a class="btn btn-lg btn-primary" href="#" role="button">点击我下载</a>
+            </div>
+        </div>
+        <hr class="divider">
+        <div>
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab"
+                                                          data-toggle="tab">FireFox</a>
+                </li>
+                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab"
+                                           data-toggle="tab">Opera</a>
+                </li>
+                <li role="presentation"><a href="#messages" aria-controls="messages" role="tab"
+                                           data-toggle="tab">chorme</a></li>
+                <li class="下拉">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Others <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li role="presentation">
+                            <a href="#first" aria-controls="frist" role="tab"
+                               data-toggle="tab">first</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#second" aria-controls="second" role="tab"
+                               data-toggle="tab">second</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#third" aria-controls="third" role="tab"
+                               data-toggle="tab">third</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    <div class="row feature">
+                        <div class="col-md-7">
+                            <h2 class="feature-heading">opera<span class="text-muted">用户首选</span></h2>
+                            <p class="lead">opera浏览器只为给你最好的体验,opera浏览器只为给你最好的体验</p>
+                        </div>
+                        <div class="col-md-5">
+                            <img class="feature-image img-responsive"
+                                 src="{{ url_for('static',filename='pic/opera.jpg') }}" alt="opera"></div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="profile">
+                    <div class="row feature">
+                        <div class="col-md-5">
+                            <h2 class="feature-heading">opera<span class="text-muted">用户首选</span></h2>
+                            <p class="lead">opera浏览器只为给你最好的体验,opera浏览器只为给你最好的体验</p>
+                        </div>
+                        <div class="col-md-7">
+                            <img class="feature-image img-responsive"
+                                 src="{{ url_for('static',filename='pic/opera.jpg') }}" alt="opera"></div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="messages">
+                    <div class="row feature">
+                        <div class="col-md-7">
+                            <h2 class="feature-heading">opera<span class="text-muted">用户首选</span></h2>
+                            <p class="lead">opera浏览器只为给你最好的体验,opera浏览器只为给你最好的体验</p>
+                        </div>
+                        <div class="col-md-5">
+                            <img class="feature-image img-responsive"
+                                 src="{{ url_for('static',filename='pic/opera.jpg') }}" alt="opera"></div>
+                    </div>
+                </div>
+                {#                下拉菜单#}
+
+                <div role="tabpanel" class="tab-pane" id="first" aria-labelledby="dropdown1-tab">
+                    <div class="row feature">
+                        <h2 class="feature-heading">opera<span class="text-muted"> Fist</span></h2>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="second" aria-labelledby="dropdown1-tab">
+                    <div class="row feature"><h2 class="feature-heading">opera<span class="text-muted"> second</span>
+                    </h2>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="third" aria-labelledby="dropdown1-tab">
+                    <div class="row feature">
+                        <h2 class="feature-heading">opera<span class="text-muted"> third</span></h2>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {#标签页#}
+
+
+    <div class="text-center">
+        <div><h3>welcome to my first Web,尊敬的{{ current_user.username }}!</h3></div>
+        <!-- Button trigger modal -->
+    </div>
+
+{% endblock body_content %}
+{% block body_js %}
+    {{ super() }}
+{% endblock body_js %}
